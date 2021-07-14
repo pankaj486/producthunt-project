@@ -3,6 +3,26 @@
 
 {% block content %}
 
-<h1> Hello This is Home Page</h1>
+{% for product in product.all %}
+
+<div class="row pt-2">
+    <div class="col-2" onclick="window.location='{% url 'detail' product.id %}';" style="cursor:pointer;">
+      <img class="img-fluid" src="{{ product.image.url }}" alt="">
+    </div>
+    <div class="col-6" onclick="window.location='{% url 'detail' product.id %}';" style="cursor:pointer;">
+      <h1>{{ product.title }}</h1>
+      <p>{{ product.body }}</p>
+    </div>
+    <div class="col-4">
+      <a href="javascript:{document.getElementById('upvote{{ product.id }}').submit()}"><button class="btn btn-outline-dark btn-lg btn-block">Upvotes {{ product.votes_total }}</button></a>
+    </div>
+</div>
+
+<form id="upvote{{ product.id }}" class="" action="{% url 'upvote' product.id %}" method="POST">
+  {% csrf_token %}
+  <input type="hidden" name="" value="">
+</form>
+
+{% endfor %}
 
 {% endblock %}
