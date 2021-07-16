@@ -4,12 +4,12 @@
 {% block content %}
 
 {% if error %}
-{{ error }}
+<p class="error_msg_color">{{ error }}</p>
 <br>
 <br>
 {% endif %}
 
-<h1 style="color:#C70039">Sign Up!</h1>
+<h1>Sign Up!</h1>
 
 <form class="" action="{% url 'signup' %}" method="POST">
   {% csrf_token %}

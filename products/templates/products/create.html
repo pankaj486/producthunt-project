@@ -3,12 +3,12 @@
 {% block content %}
 
 {% if error %}
-{{ error }}
+<p class="error_msg_color">{{ error }}</p>
 <br>
 <br>
 {% endif %}
 
-<h1 style="color:#C70039">Create</h1>
+<h1>Create</h1>
 
 <form class="" action="{% url 'create' %}" method="POST" enctype="multipart/form-data">
   {% csrf_token %}

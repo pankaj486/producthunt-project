@@ -1,4 +1,14 @@
+h1 {
+  color:#C70039;
+  font-family: 'Montserrat', sans-serif;
+}
 
 p {
-  color:#D83A56;
+  color:#222831;
+  font-family: 'STIX Two Math', serif;
+}
+
+.error_msg_color {
+  color:#D72323;
+  padding-top: 20px;
 }

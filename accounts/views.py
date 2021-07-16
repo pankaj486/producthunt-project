@@ -14,7 +14,7 @@ def signup(request):
                 auth.login(request, user)
                 return redirect('home')
         else:
-            return render(request, 'accounts/signup.html', {'error': 'Password must be matched.'})
+            return render(request, 'accounts/signup.html', {'error': 'Password must be matched!'})
 
     else:
         return render(request, 'accounts/signup.html')
